@@ -1,7 +1,7 @@
 version: 0.2
 env:
   secrets-manager:
-    BLACKDUCK_TOKEN: BlackDuck_Token
+    BLACKDUCK_TOKEN: "arn:aws:secretsmanager:ap-northeast-1:947963676739:secret:BlackDuck_Token-652nLp:BlackDuck_Token"
   variables:
     BLACKDUCK_URL: "https://testing.blackduck.synopsys.com"
 #    AWS_ACCOUNT_ID: "aws-account-id"
@@ -18,7 +18,7 @@ phases:
   #    - chmod +x ./detect.sh
   pre_build:
     commands:
-      - sudo apt-get update -y && sudo apt-get install cmake -y
+      #- sudo apt-get update -y && sudo apt-get install cmake -y
       #- sudo apt-get install python3-pip -y
       #- python --version #Python 3.9.17
   build:
