@@ -1,0 +1,29 @@
+version: 0.2
+#env:
+#  variables:
+#    AWS_DEFAULT_REGION: "ap-northeast-1"
+#    AWS_ACCOUNT_ID: "aws-account-id"
+#    IMAGE_REPO_NAME: "httpd"
+#    IMAGE_TAG: "latest"
+#    BLACKDUCK_PROJECT_NAME: "CodeBuild-Synopsys-Detect-docker-image"
+#    BLACKDUCK_URL: "https://BlackDuck-host"
+#    BLACKDUCK_TOKEN: "User API Token"
+phases:
+  #install:
+  #  commands:
+  #    - echo Synopsys detect installing 
+  #    - curl -LOk https://detect.synopsys.com/detect.sh
+  #    - chmod +x ./detect.sh
+  #pre_build:
+  #  commands:
+  #    - echo Logging in to Amazon ECR...
+  #    - $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION)
+  build:
+    commands:
+      - mkdir build && cd build
+      - cmake ..
+      - cmake --build
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      #- bash detect.sh --blackduck.url=$BLACKDUCK_URL --blackduck.api.token=$BLACKDUCK_TOKEN --blackduck.trust.cert=true --detect.project.name=$BLACKDUCK_PROJECT_NAME --detect.project.version.name=$CODEBUILD_BUILD_ID --detect.tools=DOCKER --detect.docker.image=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG --logging.level.com.synopsys.integration=DEBUG
