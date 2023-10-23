@@ -18,6 +18,7 @@ phases:
     commands:
       #- sudo apt-get update -y && sudo apt-get install cmake -y
       - sudo apt update -y
+      - python -version
       - sudo apt install python3-pip -y　
   build:
     commands:
