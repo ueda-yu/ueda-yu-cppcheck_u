@@ -16,7 +16,7 @@ phases:
   #    - chmod +x ./detect.sh
   pre_build:
     commands:
-      - sudo apt install cmake
+      - sudo apt-get update -y && sudo apt-get install cmake -y
   build:
     commands:
       - mkdir build && cd build
