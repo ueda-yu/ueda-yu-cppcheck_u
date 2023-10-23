@@ -23,12 +23,12 @@ phases:
       #- python --version #Python 3.9.17
   build:
     commands:
-      - mkdir build && cd build
-      - cmake ..
-      - pip install blackduck-c-cpp
-      #- blackduck-c-cpp -bc "cmake --build ." -d . -s False -v True -proj Ueda_test -vers AWS_C_CPP -bd $BLACKDUCK_URL -a $BLACKDUCK_TOKEN -i False
+      #- mkdir build && cd build
+      #- cmake ..
+      #- pip install blackduck-c-cpp
       #- blackduck-c-cpp -bc "cmake --build ." -d . -s False -v True -proj Ueda_test -vers AWS_C_CPP -bd $BLACKDUCK_URL -a ZDU1M2U1NTktZmRkMy00ODEyLTkwMmMtODEwMjNhOTIxZmU2OjIxYjM1MjFlLWZmMDgtNGE5Mi1iNDIxLWI0OGQ1YTczNzZmYg== -i False
-      - blackduck-c-cpp -bc "cmake --build ." -d . -s False -v True -proj Ueda_test -vers AWS_C_CPP -bd $BLACKDUCK_URL -a $BLACKDUCK_TOKEN -i False
+      #- blackduck-c-cpp -bc "cmake --build ." -d . -s False -v True -proj Ueda_test -vers AWS_C_CPP -bd $BLACKDUCK_URL -a $BLACKDUCK_TOKEN -i False
+      - echo $BLACKDUCK_TOKEN
   #post_build:
     #commands:
       #- echo Build completed on `date`
