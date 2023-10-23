@@ -17,9 +17,9 @@ phases:
   pre_build:
     commands:
       #- sudo apt-get update -y && sudo apt-get install cmake -y
-      - sudo apt update -y
-      - python --version
-      - sudo apt install python3-pip -y　
+      - sudo apt-get update -y
+      #- python --version #Python 3.9.17
+      - sudo apt-get install python3-pip　
   build:
     commands:
       #- mkdir build && cd build
