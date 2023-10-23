@@ -1,7 +1,9 @@
 version: 0.2
-#env:
-#  variables:
-#    AWS_DEFAULT_REGION: "ap-northeast-1"
+env:
+  secrets-manager:
+    BLACKDUCK_TOKEN: BlackDuck_Token
+  variables:
+    BLACKDUCK_URL: "https://testing.blackduck.synopsys.com/"
 #    AWS_ACCOUNT_ID: "aws-account-id"
 #    IMAGE_REPO_NAME: "httpd"
 #    IMAGE_TAG: "latest"
