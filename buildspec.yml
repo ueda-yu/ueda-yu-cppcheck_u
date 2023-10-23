@@ -14,10 +14,9 @@ phases:
   #    - echo Synopsys detect installing 
   #    - curl -LOk https://detect.synopsys.com/detect.sh
   #    - chmod +x ./detect.sh
-  #pre_build:
-  #  commands:
-  #    - echo Logging in to Amazon ECR...
-  #    - $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION)
+  pre_build:
+    commands:
+      - sudo apt install cmake
   build:
     commands:
       - mkdir build && cd build
