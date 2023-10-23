@@ -19,18 +19,17 @@ phases:
   pre_build:
     commands:
       - sudo apt-get update -y && sudo apt-get install cmake -y
-      #- python --version #Python 3.9.17
       - sudo apt-get install python3-pip -y
+      #- python --version #Python 3.9.17
   build:
     commands:
       - mkdir build && cd build
       - cmake ..
-      #- cmake --build .
       - pip install blackduck-c-cpp
       #- blackduck-c-cpp -bc "cmake --build ." -d . -s False -v True -proj Ueda_test -vers AWS_C_CPP -bd $BLACKDUCK_URL -a $BLACKDUCK_TOKEN -i False
-      - blackduck-c-cpp -bc "cmake --build ." -d . -s False -v True -proj Ueda_test -vers AWS_C_CPP -bd https://testing.blackduck.synopsys.com -a ZDU1M2U1NTktZmRkMy00ODEyLTkwMmMtODEwMjNhOTIxZmU2OjIxYjM1MjFlLWZmMDgtNGE5Mi1iNDIxLWI0OGQ1YTczNzZmYg== -i False
+      - blackduck-c-cpp -bc "cmake --build ." -d . -s False -v True -proj Ueda_test -vers AWS_C_CPP -bd $BLACKDUCK_URL -a ZDU1M2U1NTktZmRkMy00ODEyLTkwMmMtODEwMjNhOTIxZmU2OjIxYjM1MjFlLWZmMDgtNGE5Mi1iNDIxLWI0OGQ1YTczNzZmYg== -i False
       
-  post_build:
-    commands:
-      - echo Build completed on `date`
+  #post_build:
+    #commands:
+      #- echo Build completed on `date`
       #- bash detect.sh --blackduck.url=$BLACKDUCK_URL --blackduck.api.token=$BLACKDUCK_TOKEN --blackduck.trust.cert=true --detect.project.name=$BLACKDUCK_PROJECT_NAME --detect.project.version.name=$CODEBUILD_BUILD_ID --detect.tools=DOCKER --detect.docker.image=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG --logging.level.com.synopsys.integration=DEBUG
