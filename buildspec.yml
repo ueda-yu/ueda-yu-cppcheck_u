@@ -25,6 +25,7 @@ phases:
       #- cmake ..
       #- cmake --build .
       - pip install blackduck-c-cpp
+      - Blackduck-c-cpp -bc "cmake --build ." -d . -s False -v True -proj Ueda_test -vers AWS_C_CPP -bd $BLACKDUCK_URL -a $BLACKDUCK_TOKEN -i False
   post_build:
     commands:
       - echo Build completed on `date`
