@@ -17,7 +17,7 @@ phases:
   pre_build:
     commands:
       - sudo apt-get update -y && sudo apt-get install cmake -y
-      - sudo apt-get install python3-pip　
+      - sudo apt update && sudo apt install python3-pip　
   build:
     commands:
       #- mkdir build && cd build
