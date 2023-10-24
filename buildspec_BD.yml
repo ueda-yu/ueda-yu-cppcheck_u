@@ -11,9 +11,11 @@ phases:
   install:
     commands:
       - echo Synopsys detect installing 
-      - java -version
+      #- java -version    ##openjdk version "11.0.20" 2023-07-18 LTS
       - curl -LOk https://detect.synopsys.com/detect9.sh
       - chmod +x ./detect9.sh
   build:
     commands:
-      - bash detect9.sh --blackduck.url=$BLACKDUCK_URL --blackduck.api.token=$BLACKDUCK_TOKEN --blackduck.trust.cert=true --detect.project.name=$BLACKDUCK_PROJECT_NAME --detect.project.version.name=$BLACKDUCK_VERSION_NAME --detect.source.path=. --blackduck.offline.mode=false
+      - echo $BLACKDUCK_TOKEN
+      - echo $BLACKDUCK_URL
+      #- bash detect9.sh --blackduck.url=$BLACKDUCK_URL --blackduck.api.token=$BLACKDUCK_TOKEN --blackduck.trust.cert=true --detect.project.name=$BLACKDUCK_PROJECT_NAME --detect.project.version.name=$BLACKDUCK_VERSION_NAME --detect.source.path=. --blackduck.offline.mode=false
