@@ -9,7 +9,6 @@ phases:
     commands:
       - sudo apt-get update -y && sudo apt-get install cmake -y
       - sudo apt-get install python3-pip -y
-      #- python --version #Python 3.9.17
   build:
     commands:
       - mkdir build && cd build
