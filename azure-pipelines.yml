@@ -29,13 +29,14 @@ steps:
 
 ## SCA Synopsys Security Scan (https://marketplace.visualstudio.com/items?itemName=synopsys-security-scan.synopsys-security-scan) ##
 - task: SynopsysSecurityScan@1
-#condition: not(eq(variables['Build.Reason'], 'PullRequest'))
+condition: not(eq(variables['Build.Reason'], 'PullRequest'))
   env:
     DETECT_PROJECT_NAME: Ueda_test
     DETECT_PROJECT_VERSION_NAME: ADO_SecurityScan
+    DETECT_EXCLUDED_DETECTOR_TYPES: GIT
   inputs:
     scanType: 'blackduck'
     bridge_blackduck_url: $(BLACKDUCK_URL)
     bridge_blackduck_token: $(BLACKDUCK_TOKEN)
     bridge_blackduck_scan_full: true
-  displayName: 'Synopsys Security Scan'
+  displayName: 'Synopsys Security Scan PR'
